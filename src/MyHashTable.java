@@ -31,12 +31,20 @@ public class MyHashTable <K, V> {
     public void put(K key, V value){
         int index = Hash(key);
         HashNode<K, V> node = arr[index];
+        HashNode<K, V> prev = null;
         while(node != null){
             if(node.key.equals(key)){
                 node.value = value;
                 return;
             }
+            prev = node;
             node= node.next;
+        }
+        HashNode<K, V> newNode = new HashNode<>(key, value);
+        if(prev == null){
+            arr[index] = newNode;
+        } else {
+            prev.next = newNode;
         }
         size++;
     };
@@ -44,13 +52,14 @@ public class MyHashTable <K, V> {
         int index = Hash(key);
         HashNode<K, V> node = arr[index];
         while(node != null){
-            if(node.key.equals(key)){
+            if(node.key != null && node.key.equals(key)){
                 return node.value;
             }
             node = node.next;
         }
         return null;
     };
+
     public V remove(K key){
         int index = Hash(key);
         HashNode<K, V> node = arr[index];
@@ -100,6 +109,6 @@ public class MyHashTable <K, V> {
 
         return null;
     }
-    };
+    }
 
 

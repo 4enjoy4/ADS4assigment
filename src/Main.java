@@ -6,6 +6,6 @@ public class Main {
         table.put("monitor", 2);
         table.put("mousePud", 4);
         table.put("mouse", 1);
-        System.out.println(table.get("mouse"));
+        System.out.println(table.get("Keyboard"));
     }
 }
