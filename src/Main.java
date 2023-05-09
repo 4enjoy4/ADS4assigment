@@ -1,5 +1,11 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        MyHashTable<String, Integer> table = new MyHashTable<>();
+        table.put("Keyboard", 3);
+        table.put("monitor", 2);
+        table.put("mousePud", 4);
+        table.put("mouse", 1);
+        System.out.println(table.get("mouse"));
     }
 }
