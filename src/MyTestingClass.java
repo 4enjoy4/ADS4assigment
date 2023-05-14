@@ -11,7 +11,7 @@ public class MyTestingClass {
         }
         System.out.println("Hash table contents:");
         for(int i =0; i < table.size(); i++){
-            System.out.println(table.get(i));
+            System.out.println(table.getBucketSize(i));
         }
     }
 }

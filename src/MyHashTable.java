@@ -124,6 +124,21 @@ public class MyHashTable <K, V> {
         //If the value doesn't exist in the hash table, null is returned.
         return null;
     }
+    // Returns the size of the linked list (or bucket) at the specified index in the hash table.
+    //  Throws an IllegalArgumentException if the input index is out of bounds.
+    public int getBucketSize(int index) {
+        if (index < 0 || index >= M) {
+            throw new IllegalArgumentException("Index out of bounds.");
+        }
+        int bucketSize = 0;
+        HashNode<K, V> node = arr[index];
+        while (node != null) {
+            bucketSize++;
+            node = node.next;
+        }
+        return bucketSize;
+    }
+
 
 
 }
