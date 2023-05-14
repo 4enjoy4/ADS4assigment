@@ -84,7 +84,8 @@ public class MyHashTable <K, V> {
         }
         return null;
     };
-    public int size(){
+    public int size(){//returns the size
+
         return size;
     };
     public boolean contains(V value){
@@ -92,14 +93,14 @@ public class MyHashTable <K, V> {
             HashNode<K, V> node = arr[i];
             while (node != null) {
                 if (node.value.equals(value)) {
-                    return true;
+                    return true;//Returns true if a key-value pair with the given value is found, false otherwise.
                 }
                 node = node.next;
             }
         }
         return false;
     };
-    public K getKey(V value){
+    public K getKey(V value){//Returns the key corresponding to the given value in the hash table. If multiple keys have the same value, only one of them will be returned.
         for (int i = 0; i < M; i++) {
             HashNode<K, V> node = arr[i];
 
@@ -111,7 +112,7 @@ public class MyHashTable <K, V> {
                 node = node.next;
             }
         }
-
+        //If the value doesn't exist in the hash table, null is returned.
         return null;
     }
     }
