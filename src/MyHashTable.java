@@ -138,9 +138,6 @@ public class MyHashTable <K, V> {
         }
         return bucketSize;
     }
-
-
-
 }
 
 

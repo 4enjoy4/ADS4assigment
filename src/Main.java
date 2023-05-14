@@ -23,15 +23,15 @@ public class Main {
         for(int i =0; i < table.size(); i++){
             System.out.println(table.getBucketSize(i));
         }
-        MyHashTable<MyTestingClass, String> table2 = new MyHashTable<>();
+        MyHashTable<MyTestingClass , String> table2 = new MyHashTable<>();
 
         MyTestingClass key1 = new MyTestingClass(1, "John");
         MyTestingClass key2 = new MyTestingClass(2, "Jane");
 
         table2.put(key1, "Value 1");
         table2.put(key2, "Value 2");
+        System.out.println(table2.get(key1));
+        System.out.println(table2.get(key2));
 
-        System.out.println(table2.get(key1)); // Output: Value 1
-        System.out.println(table2.get(key2)); // Output: Value 2
     }
 }
