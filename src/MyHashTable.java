@@ -32,7 +32,9 @@ public class MyHashTable <K, V> {
         int index = Hash(key);
         HashNode<K, V> node = arr[index];
         HashNode<K, V> prev = null;
+        // Traverse the linked list until the key is found or the end is reached
         while(node != null){
+            // If the key already exists, update the value and return
             if(node.key.equals(key)){
                 node.value = value;
                 return;
@@ -40,6 +42,7 @@ public class MyHashTable <K, V> {
             prev = node;
             node= node.next;
         }
+        // If the key doesn't exist, add a new node to the end of the linked list
         HashNode<K, V> newNode = new HashNode<>(key, value);
         if(prev == null){
             arr[index] = newNode;
@@ -51,12 +54,14 @@ public class MyHashTable <K, V> {
     public V get(K key){
         int index = Hash(key);
         HashNode<K, V> node = arr[index];
+        // Traverse the linked list until the key is found or the end is reached
         while(node != null){
             if(node.key != null && node.key.equals(key)){
                 return node.value;
             }
             node = node.next;
         }
+        // If the key is not found, return null
         return null;
     };
 
