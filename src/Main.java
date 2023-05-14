@@ -10,5 +10,6 @@ public class Main {
         table.remove("Keyboard");
         System.out.println(table.get("Keyboard"));
         System.out.println(table.getKey(2));
+
     }
 }

@@ -1,7 +1,11 @@
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Random;
+
 public class MyHashTable <K, V> {
+
+
     private class HashNode <K, V> {
         private K key; // The key for this node
         private V value; // The value of the key
@@ -9,7 +13,10 @@ public class MyHashTable <K, V> {
         public HashNode(K key, V value){
             this.key = key;
             this.value = value;
+
         }
+
+
         @Override
         public  String toString(){
             return "{" + key +" "+ value + "}";
@@ -51,6 +58,8 @@ public class MyHashTable <K, V> {
         }
         size++;
     };
+
+
     public V get(K key){
         int index = Hash(key);
         HashNode<K, V> node = arr[index];
@@ -115,6 +124,8 @@ public class MyHashTable <K, V> {
         //If the value doesn't exist in the hash table, null is returned.
         return null;
     }
-    }
+
+
+}
 
 

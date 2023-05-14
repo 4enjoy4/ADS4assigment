@@ -1,20 +1,21 @@
+import java.util.Random;
+
 public class MyTestingClass {
-    private int id;
-    private String name;
-    public MyTestingClass(int id, String name){
-        this.id = id;
-        this.name = name;
-    }
-    public int getId(){
-        return id;
-    }
-    public String getName(){
-        return name;
-    }
-    public int hashCode(){
-        int result = 17;
-        result = 31 * result + id;
-        result = 31 * result + name.hashCode();
-        return result;
+    public static void main(String[] args) {
+        MyHashTable<Integer, Integer> table = new MyHashTable<>();
+        Random random = new Random();
+        for (int i = 0; i < 1000; i++) {
+            int key = random.nextInt(1000);
+            int value = random.nextInt(1000);
+            table.put(key, value);
+        }
+        System.out.println("Hash table contents:");
+        for(int i =0; i < table.size(); i++){
+            System.out.println(table.get(i));
+        }
     }
 }
+
+
+
+
