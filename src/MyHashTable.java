@@ -108,7 +108,19 @@ public class MyHashTable <K, V> {
             }
         }
         return false;
-    };
+    }
+    public boolean Contains(K key){
+        for(int i = 0; i < M; i++){
+            HashNode<K, V> node = arr[i];
+            while (node != null){
+                if(node.key.equals(key)){
+                    return true;
+                }
+                node = node.next;
+            }
+        }
+        return false;
+    }
     public K getKey(V value){//Returns the key corresponding to the given value in the hash table. If multiple keys have the same value, only one of them will be returned.
         for (int i = 0; i < M; i++) {
             HashNode<K, V> node = arr[i];

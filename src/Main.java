@@ -8,6 +8,8 @@ public class Main {
         table1.put("monitor", 2);
         table1.put("mousePud", 4);
         table1.put("mouse", 1);
+        System.out.println(table1.contains(2));
+        System.out.println(table1.Contains("Keyboard"));
         System.out.println(table1.get("Keyboard"));
         table1.remove("Keyboard");
         System.out.println(table1.get("Keyboard"));
