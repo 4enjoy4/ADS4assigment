@@ -136,6 +136,9 @@ public class MyHashTable <K, V> {
         //If the value doesn't exist in the hash table, null is returned.
         return null;
     }
+    public int hash(K key){
+        return Math.abs(key.hashCode()%M);
+    }
     // Returns the size of the linked list (or bucket) at the specified index in the hash table.
     //  Throws an IllegalArgumentException if the input index is out of bounds.
     public int getBucketSize(int index) {

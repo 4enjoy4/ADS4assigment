@@ -1,9 +1,10 @@
+import java.util.Random;
 
 public class MyTestingClass {
     private int id;
     private String name;
 
-    public MyTestingClass(int id, String name) {
+    public MyTestingClass() {
         this.id = id;
         this.name = name;
     }
@@ -26,6 +27,18 @@ public class MyTestingClass {
         result = 31 * result + id;
         result = 31 * result + (name == null ? 0 : name.hashCode());
         return result;
+    }
+    public void getRandom(){
+        MyHashTable<Integer, String> table = new MyHashTable<>();
+        Random rand = new Random();
+        int bucketSize = 0;
+        for(int i =0; i < 1000; i++){
+        int key = rand.nextInt(1000);
+        String value = "Value" + rand.nextInt(1000);
+        table.put(key, value);
+        bucketSize = table.getBucketSize(table.hash(key));
+        }
+        System.out.println(bucketSize);
     }
 }
 
